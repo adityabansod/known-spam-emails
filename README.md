@@ -5,22 +5,23 @@ Tiny little library to check email addresses against known "bad" email lists.
 
 ## Installation
 
-  npm install known-spam-emails --save
+    npm install known-spam-emails --save
 
 ## Usage
 
-  var spamchecker = require('known-spam-emails')
+```javascript
+    var spamchecker = require('known-spam-emails')
 
-  // known bad
-  var bad = spamchecker.isEmailClean('demondon@hotmail.co.uk');
+    // known bad
+    var bad = spamchecker.isEmailClean('demondon@hotmail.co.uk');
 
-  // known good (unknown)
-  var good = spamchecker.isEmailClean('somegoodemail@email.com');
-
+    // known good (unknown)
+    var good = spamchecker.isEmailClean('somegoodemail@email.com');
+```
 
 ## Tests
 
-  npm test
+    npm test
 
 ## Contributing
 
