@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "description": "List of known email addressed used by bots/spammers to check against when creating registering accounts in an app.",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/adityabansod/known-spam-emails.git"
+  },
+  "homepage": "https://github.com/adityabansod/known-spam-emails",
   "scripts": {
     "test": "node test.js"
   },
