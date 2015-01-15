@@ -15,7 +15,7 @@ function loadLists() {
 		}
 
 		files.forEach(function(file) {
-			readFile(pathToLists + file);
+			readFile(path.join(pathToLists, file));
 		});
 	});
 }
@@ -34,7 +34,7 @@ function readFile(file) {
 				case '\n':
 					break;
 				default:
-					lists.push(email);
+					lists.push(email.trim());
 					break;
 			}
 		});
@@ -43,6 +43,6 @@ function readFile(file) {
 
 module.exports = {
 	isEmailClean: function(email) {
-		return (lists.indexOf(email) === -1);
+		return (lists.indexOf(email.trim()) === -1);
 	}
 };
