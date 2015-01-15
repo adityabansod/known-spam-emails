@@ -26,6 +26,7 @@ function readFile(file) {
 			switch (email.charAt(0)) {
 				case '#':
 				case '!':
+				case '\n':
 					break;
 				default:
 					lists.push(email);
