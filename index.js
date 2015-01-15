@@ -1,12 +1,17 @@
-var lists = [];
+'use strict';
+
 var fs = require('fs');
-var pathToLists = __dirname + '/spam_lists/';
+var path = require('path');
+
+var pathToLists = path.join(__dirname, 'spam_lists');
+var lists = [];
+
 loadLists();
 
 function loadLists() {
 	fs.readdir(pathToLists, function(err, files) {
 		if(err) {
-			throw "could not find spam_lists directory";
+			throw new Error('could not find spam_lists directory');
 		}
 
 		files.forEach(function(file) {
@@ -18,7 +23,7 @@ function loadLists() {
 function readFile(file) {
 	fs.readFile(file, 'utf8', function(err, data) {
 		if(err) {
-			throw "could not open " + file;
+			throw new Error('could not open ' + file);
 		}
 
 		var emails = data.split('\n');
@@ -30,13 +35,14 @@ function readFile(file) {
 					break;
 				default:
 					lists.push(email);
+					break;
 			}
-		})
+		});
 	});
 }
 
 module.exports = {
 	isEmailClean: function(email) {
-		return (lists.indexOf(email) == -1); 
+		return (lists.indexOf(email) === -1);
 	}
-}
+};

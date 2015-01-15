@@ -1,3 +1,5 @@
+'use strict';
+
 var spamchecker = require('./index.js');
 
 // really lame but we're
@@ -9,6 +11,6 @@ setTimeout(function(){
 	// known good (unknown)
 	var good = spamchecker.isEmailClean('somegoodemail@email.com');
 
-	console.log('results for bad: ' + bad)
-	console.log('results for good: ' + good)
+	console.log('results for bad: ' + bad);
+	console.log('results for good: ' + good);
 }, 5000);
